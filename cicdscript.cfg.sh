@@ -51,7 +51,7 @@ then
 	echo "*******************************************"
 	echo "Build Maven image"
 	echo "*******************************************"
-	docker build -t $jdk_image_name $jdk_dockerfile_path
+	docker build -t $jdk_image_name --build-arg jarname=$jar_name $jdk_dockerfile_path
 fi
 
 echo "*******************************************"
