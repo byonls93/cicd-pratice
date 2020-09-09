@@ -1,12 +1,12 @@
+
 # Base Alpine Linux based image with OpenJDK JRE only
 FROM openjdk:8-jre-alpine
-ARG jarname=sample.jar
-ENV jarname=$jarname
 # copy application WAR (with libraries inside)
-
+ARG jarname=sample.jar
+ENV jarname=${jarname}
 RUN mkdir /app
 
 WORKDIR /app
 
 # specify default command
-CMD /usr/bin/java -jar app/${jarname}
+CMD /usr/bin/java -jar /app/${jarname}
